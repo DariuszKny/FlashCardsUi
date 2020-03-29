@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="458.0" prefWidth="752.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jpro.flashCardsUi.viewControllers.ManageViewController">
+   <children>
+      <VBox layoutX="14.0" layoutY="14.0" prefHeight="322.0" prefWidth="232.0">
+         <children>
+            <Label prefHeight="49.0" prefWidth="235.0" text="Create Your Fleshcard" textFill="#e35d6a">
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Verdana" size="20.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="toTranslateText" focusColor="#e35d6a" prefHeight="34.0" prefWidth="232.0" promptText="Type Your text here">
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+            </JFXTextField>
+            <JFXButton fx:id="translateButton" onAction="#translate" prefHeight="37.0" prefWidth="232.0" style="-fx-background-color: #c98276; -fx-background-radius: 10px;" text="TRANSLATE">
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Verdana Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <JFXTextField fx:id="translatedText" editable="false" focusColor="#e35d6a" prefHeight="25.0" prefWidth="236.0">
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+            </JFXTextField>
+            <JFXButton fx:id="playButton" onAction="#play" prefHeight="25.0" prefWidth="262.0" style="-fx-background-color: #c98276; -fx-background-radius: 10px;" text="PLAY">
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+               <graphic>
+                  <FontAwesomeIconView glyphName="PLAY" />
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="createButton" onAction="#createFlashCard" prefHeight="36.0" prefWidth="239.0" style="-fx-background-color: #c98276; -fx-background-radius: 10px;" text="CREATE FLASHCARD">
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </VBox>
+      <TableView fx:id="tableView" layoutX="275.0" layoutY="38.0" prefHeight="348.0" prefWidth="443.0" />
+   </children>
+</AnchorPane>

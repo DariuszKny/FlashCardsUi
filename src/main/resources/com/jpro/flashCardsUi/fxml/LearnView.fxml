@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="519.0" prefWidth="771.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jpro.flashCardsUi.viewControllers.LearnViewController">
+   <children>
+      <VBox layoutX="98.0" layoutY="41.0" prefHeight="421.0" prefWidth="550.0">
+         <children>
+            <JFXButton fx:id="nextButton" onAction="#nextFleshCard" prefHeight="42.0" prefWidth="144.0" text="NEXT FLASHCARD">
+               <VBox.margin>
+                  <Insets left="200.0" top="20.0" />
+               </VBox.margin>
+            </JFXButton>
+            <JFXTextField fx:id="inputTextField" editable="false" prefColumnCount="30" prefHeight="40.0" prefWidth="444.0">
+               <VBox.margin>
+                  <Insets left="50.0" right="50.0" top="20.0" />
+               </VBox.margin>
+            </JFXTextField>
+            <JFXButton fx:id="checkButton" onAction="#checkFleshCard" layoutX="10.0" layoutY="10.0" prefHeight="42.0" prefWidth="144.0" text="CHECK ANSWER">
+               <VBox.margin>
+                  <Insets left="200.0" top="20.0" />
+               </VBox.margin>
+            </JFXButton>
+            <JFXTextField fx:id="outputTextField" editable="false" layoutX="10.0" layoutY="52.0" prefColumnCount="30" prefHeight="40.0">
+               <VBox.margin>
+                  <Insets left="50.0" right="50.0" top="20.0" />
+               </VBox.margin>
+            </JFXTextField>
+            <HBox prefHeight="78.0" prefWidth="444.0">
+               <children>
+                  <JFXButton fx:id="newButton" prefHeight="40.0" prefWidth="120.0" text="NEW">
+                     <HBox.margin>
+                        <Insets left="30.0" />
+                     </HBox.margin>
+                  </JFXButton>
+                  <JFXButton fx:id="badButton" layoutX="10.0" layoutY="10.0" prefHeight="40.0" prefWidth="120.0" text="BAD">
+                     <HBox.margin>
+                        <Insets left="30.0" />
+                     </HBox.margin>
+                  </JFXButton>
+                  <JFXButton fx:id="goodButton" layoutX="62.0" layoutY="10.0" prefHeight="40.0" prefWidth="120.0" text="GOOD">
+                     <HBox.margin>
+                        <Insets left="30.0" />
+                     </HBox.margin>
+                  </JFXButton>
+                  <JFXButton fx:id="doneButton" layoutX="114.0" layoutY="10.0" prefHeight="40.0" prefWidth="120.0" text="DONE">
+                     <HBox.margin>
+                        <Insets left="30.0" right="30.0" />
+                     </HBox.margin>
+                  </JFXButton>
+               </children>
+               <padding>
+                  <Insets top="30.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

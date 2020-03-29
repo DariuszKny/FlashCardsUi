@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDialog?>
+<?import com.jfoenix.controls.JFXDialogLayout?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="660.0" prefWidth="778.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jpro.flashCardsUi.viewControllers.RegisterMenuController">
+   <children>
+      <VBox layoutX="207.0" layoutY="27.0" prefHeight="551.0" prefWidth="365.0" style="-fx-border-color: #c98276; -fx-border-width: 3px; -fx-background-radius: 2px; -fx-border-radius: 6px;">
+         <children>
+            <Label alignment="CENTER" prefHeight="40.0" prefWidth="420.0" text="Account Name">
+               <VBox.margin>
+                  <Insets left="15.0" right="15.0" top="20.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Verdana" size="22.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="fieldName" focusColor="#e35d6a" prefHeight="40.0" prefWidth="359.0">
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" top="10.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets right="5.0" />
+               </padding>
+               <font>
+                  <Font name="Verdana" size="16.0" />
+               </font>
+            </JFXTextField>
+            <Label alignment="CENTER" layoutX="13.0" layoutY="93.0" prefHeight="40.0" prefWidth="420.0" text="Email">
+               <VBox.margin>
+                  <Insets left="15.0" right="15.0" top="20.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Verdana" size="22.0" />
+               </font>
+               <padding>
+                  <Insets right="5.0" />
+               </padding>
+            </Label>
+            <JFXTextField fx:id="fieldMail" focusColor="#e35d6a" layoutX="13.0" layoutY="133.0" prefHeight="40.0">
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" top="10.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets right="5.0" />
+               </padding>
+               <font>
+                  <Font name="Verdana" size="16.0" />
+               </font>
+            </JFXTextField>
+            <Label alignment="CENTER" layoutX="13.0" layoutY="13.0" prefHeight="40.0" prefWidth="420.0" text="Password">
+               <VBox.margin>
+                  <Insets left="15.0" right="15.0" top="20.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Verdana" size="22.0" />
+               </font>
+               <padding>
+                  <Insets right="5.0" />
+               </padding>
+            </Label>
+            <JFXPasswordField fx:id="fieldPassword" focusColor="#e35d6a" prefHeight="40.0">
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" top="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Verdana" size="16.0" />
+               </font>
+            </JFXPasswordField>
+            <Label alignment="CENTER" layoutX="28.0" layoutY="153.0" prefHeight="40.0" prefWidth="420.0" text="Confirm Password">
+               <font>
+                  <Font name="Verdana" size="22.0" />
+               </font>
+               <padding>
+                  <Insets right="5.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets left="15.0" right="15.0" top="20.0" />
+               </VBox.margin>
+            </Label>
+            <JFXPasswordField fx:id="fieldConfirmPassword" focusColor="#e35d6a" layoutX="43.0" layoutY="213.0" prefHeight="40.0">
+               <font>
+                  <Font name="Verdana" size="16.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" top="10.0" />
+               </VBox.margin>
+            </JFXPasswordField>
+            <JFXButton fx:id="regButton" onAction="#create" prefHeight="40.0" prefWidth="433.0" style="-fx-background-color: #dbac98; -fx-background-radius: 20px;" text="Register" textFill="#e35d6a">
+               <VBox.margin>
+                  <Insets left="15.0" right="15.0" top="40.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Verdana Bold" size="22.0" />
+               </font>
+               <padding>
+                  <Insets right="5.0" />
+               </padding>
+            </JFXButton>
+         </children></VBox>
+
+
+
+   </children>
+</AnchorPane>

@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="distributions">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/build/distributions/FlashCardsUi.zip!/" />
+      <root url="jar://$PROJECT_DIR$/build/distributions/HelloJPro.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

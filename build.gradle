@@ -1,0 +1,79 @@
+
+/**
+ ******************  Script Configuration ******************
+ */
+buildscript {
+  repositories {
+    jcenter()
+
+    maven {
+      url "https://sandec.bintray.com/repo"
+    }
+  }
+
+  dependencies {
+    classpath 'com.sandec.jpro:jpro-plugin-gradle:2019.2.2'
+  }
+}
+
+
+/**
+ ******************  Java Configuration ******************
+ */
+apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'com.google.osdetector'
+
+
+
+compileJava {
+  sourceCompatibility = 1.8
+  targetCompatibility = 1.8
+}
+
+repositories {
+  jcenter()
+}
+
+
+ext.platform = osdetector.os == 'osx' ? 'mac' : osdetector.os == 'windows' ? 'win' : osdetector.os
+
+dependencies {
+  compile 'de.jensd:fontawesomefx-emojione:2.2.7-2'
+  compile 'de.jensd:fontawesomefx-fontawesome:4.7.0-5'
+  compile 'de.jensd:fontawesomefx-icons525:3.0.0-4'
+  compile 'de.jensd:fontawesomefx-materialdesignfont:1.7.22-4'
+  compile 'de.jensd:fontawesomefx-materialicons:2.2.0-5'
+  compile 'de.jensd:fontawesomefx-octicons:4.3.0-5'
+  compile 'de.jensd:fontawesomefx-weathericons:2.0.10-5'
+  compile 'de.jensd:fontawesomefx-controls:8.15'
+
+  compile group: 'com.googlecode.soundlibs', name: 'jlayer', version: '1.0.1.4'
+  implementation 'com.google.code.gson:gson:2.8.6'
+
+  compile 'com.jfoenix:jfoenix:8.0.8'
+  compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.2.5.RELEASE'
+  compileOnly 'org.projectlombok:lombok:1.18.10'
+  annotationProcessor 'org.projectlombok:lombok:1.18.10'
+}
+
+
+/**
+ ******************  jpro Configuration ******************
+ */
+apply plugin: 'com.sandec.jpro'
+
+
+/**
+ * App Main Class
+ */
+mainClassName = 'com.jpro.flashCardsUi.HelloJProFXML'
+
+/**
+ * jpro settings
+ */
+jpro {
+  JVMArgs << '-Xmx1000m'
+  port = 8080
+}
+
