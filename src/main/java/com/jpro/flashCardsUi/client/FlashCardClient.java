@@ -57,4 +57,14 @@ public class FlashCardClient {
             System.out.println(response.getStatusCode());
         }
     }
+
+    public void updateFlashCard(FetchedFlashCard fetchedFlashCard, FlashCardProgress flashCardProgress){
+        String url = "http://localhost:8080/v1/flashCard/updateFlashCard";
+        RestTemplate restTemplate = new RestTemplate();
+
+        fetchedFlashCard.setFlashCardProgress(flashCardProgress);
+        fetchedFlashCard.setUpdated(LocalDateTime.now());
+
+        restTemplate.put(url, fetchedFlashCard);
+    }
 }

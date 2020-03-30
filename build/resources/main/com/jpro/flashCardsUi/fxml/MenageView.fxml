@@ -7,29 +7,33 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="458.0" prefWidth="752.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jpro.flashCardsUi.viewControllers.ManageViewController">
+<AnchorPane prefHeight="557.0" prefWidth="752.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jpro.flashCardsUi.viewControllers.ManageViewController">
    <children>
-      <VBox layoutX="14.0" layoutY="14.0" prefHeight="322.0" prefWidth="232.0">
+      <VBox layoutX="24.0" layoutY="39.0" prefHeight="348.0" prefWidth="251.0">
          <children>
             <Label prefHeight="49.0" prefWidth="235.0" text="Create Your Fleshcard" textFill="#e35d6a">
                <VBox.margin>
-                  <Insets top="15.0" />
+                  <Insets left="5.0" right="5.0" top="15.0" />
                </VBox.margin>
                <font>
                   <Font name="Verdana" size="20.0" />
                </font>
             </Label>
-            <JFXTextField fx:id="toTranslateText" focusColor="#e35d6a" prefHeight="34.0" prefWidth="232.0" promptText="Type Your text here">
+            <JFXTextField fx:id="toTranslateText" focusColor="#e35d6a" prefHeight="34.0" prefWidth="232.0" promptText="Type Your text here" text="Type your word here">
                <VBox.margin>
-                  <Insets top="15.0" />
+                  <Insets left="5.0" right="5.0" top="15.0" />
                </VBox.margin>
+               <font>
+                  <Font name="Verdana" size="12.0" />
+               </font>
             </JFXTextField>
             <JFXButton fx:id="translateButton" onAction="#translate" prefHeight="37.0" prefWidth="232.0" style="-fx-background-color: #c98276; -fx-background-radius: 10px;" text="TRANSLATE">
                <VBox.margin>
-                  <Insets top="15.0" />
+                  <Insets left="5.0" right="5.0" top="15.0" />
                </VBox.margin>
                <font>
                   <Font name="Verdana Bold" size="12.0" />
@@ -37,12 +41,15 @@
             </JFXButton>
             <JFXTextField fx:id="translatedText" editable="false" focusColor="#e35d6a" prefHeight="25.0" prefWidth="236.0">
                <VBox.margin>
-                  <Insets top="15.0" />
+                  <Insets left="5.0" right="5.0" top="15.0" />
                </VBox.margin>
+               <font>
+                  <Font name="Verdana" size="12.0" />
+               </font>
             </JFXTextField>
             <JFXButton fx:id="playButton" onAction="#play" prefHeight="25.0" prefWidth="262.0" style="-fx-background-color: #c98276; -fx-background-radius: 10px;" text="PLAY">
                <VBox.margin>
-                  <Insets top="15.0" />
+                  <Insets left="5.0" right="5.0" top="15.0" />
                </VBox.margin>
                <graphic>
                   <FontAwesomeIconView glyphName="PLAY" />
@@ -53,7 +60,7 @@
             </JFXButton>
             <JFXButton fx:id="createButton" onAction="#createFlashCard" prefHeight="36.0" prefWidth="239.0" style="-fx-background-color: #c98276; -fx-background-radius: 10px;" text="CREATE FLASHCARD">
                <VBox.margin>
-                  <Insets top="15.0" />
+                  <Insets left="5.0" right="5.0" top="15.0" />
                </VBox.margin>
                <font>
                   <Font name="System Bold" size="12.0" />
@@ -62,5 +69,44 @@
          </children>
       </VBox>
       <TableView fx:id="tableView" layoutX="275.0" layoutY="38.0" prefHeight="348.0" prefWidth="443.0" />
+      <HBox layoutX="275.0" layoutY="386.0" prefHeight="78.0" prefWidth="444.0">
+         <children>
+            <JFXButton buttonType="RAISED"  prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: #EF4323; -fx-background-radius: 20px;" text="NEW">
+               <HBox.margin>
+                  <Insets left="30.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="Verdana" size="12.0" />
+               </font>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="10.0" layoutY="10.0"  prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: #FFEC00; -fx-background-radius: 20px;" text="BAD">
+               <HBox.margin>
+                  <Insets left="30.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="Verdana" size="12.0" />
+               </font>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="62.0" layoutY="10.0" prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: #C4D82D; -fx-background-radius: 20px;" text="GOOD">
+               <HBox.margin>
+                  <Insets left="30.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="Verdana" size="12.0" />
+               </font>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="114.0" layoutY="10.0" prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: #2BB34B; -fx-background-radius: 20px;" text="DONE">
+               <HBox.margin>
+                  <Insets left="30.0" right="30.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="Verdana" size="12.0" />
+               </font>
+            </JFXButton>
+         </children>
+         <padding>
+            <Insets top="30.0" />
+         </padding>
+      </HBox>
    </children>
 </AnchorPane>

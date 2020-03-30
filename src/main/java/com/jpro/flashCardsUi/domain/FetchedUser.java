@@ -16,6 +16,6 @@ public class FetchedUser {
     private String email;
     private Language language;
     private UserAppColor userAppColor;
-//    private List<FlashCardDto> flashCardDtoList;
+
 
 }

@@ -21,7 +21,7 @@ public class HelloJProFXML extends JProApplication {
 
     @Override
     public void start(Stage stage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml/main.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml/MainView.fxml"));
         Scene scene = null;
         try {
             Parent root = loader.load();

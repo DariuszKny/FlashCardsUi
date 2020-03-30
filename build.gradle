@@ -74,6 +74,6 @@ mainClassName = 'com.jpro.flashCardsUi.HelloJProFXML'
  */
 jpro {
   JVMArgs << '-Xmx1000m'
-  port = 8080
+  port = 8181
 }
 

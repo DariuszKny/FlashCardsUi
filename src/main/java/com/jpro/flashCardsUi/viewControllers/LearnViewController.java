@@ -4,6 +4,7 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import com.jpro.flashCardsUi.client.FlashCardClient;
 import com.jpro.flashCardsUi.domain.FetchedFlashCard;
+import com.jpro.flashCardsUi.domain.FlashCardProgress;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javazoom.jl.player.advanced.AdvancedPlayer;
@@ -49,19 +50,21 @@ public class LearnViewController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
         flashCardClient = new FlashCardClient();
-        hideAll();
+        disableAll();
     }
 
-    public void hideAll(){
-        inputTextField.setVisible(false);
-        checkButton.setVisible(false);
-        outputTextField.setVisible(false);
-        newButton.setVisible(false);
-        badButton.setVisible(false);
-        goodButton.setVisible(false);
-        doneButton.setVisible(false);
+    private void disableAll(){
+        checkButton.setDisable(true);
+        newButton.setDisable(true);
+        badButton.setDisable(true);
+        goodButton.setDisable(true);
+        doneButton.setDisable(true);
+    }
+
+    private void clearText(){
+        inputTextField.setText("");
+        outputTextField.setText("");
     }
 
     public void nextFleshCard(){
@@ -71,9 +74,8 @@ public class LearnViewController implements Initializable {
                 .get();
         nextFlashcard = first;
         inputTextField.setText(nextFlashcard.getName());
-        inputTextField.setVisible(true);
-        checkButton.setVisible(true);
-        nextButton.setVisible(false);
+        nextButton.setDisable(true);
+        checkButton.setDisable(false);
     }
 
     public void checkFleshCard() throws  Exception{
@@ -83,12 +85,41 @@ public class LearnViewController implements Initializable {
         player.play();
 
         outputTextField.setText(nextFlashcard.getAmazonCardDto().getTranslation());
-        outputTextField.setVisible(true);
 
-        newButton.setVisible(true);
-        badButton.setVisible(true);
-        goodButton.setVisible(true);
-        doneButton.setVisible(true);
+        newButton.setDisable(false);
+        badButton.setDisable(false);
+        goodButton.setDisable(false);
+        doneButton.setDisable(false);
+    }
+
+    public void updateFleshCardToNew(){
+        update(FlashCardProgress.NEW);
+        disableAll();
+        nextButton.setDisable(false);
+    }
+
+    public void updateFleshCardToBad(){
+        update(FlashCardProgress.BAD);
+        disableAll();
+        nextButton.setDisable(false);
+    }
+
+    public void updateFleshCardToGood(){
+        update(FlashCardProgress.GOOD);
+        disableAll();
+        nextButton.setDisable(false);
+    }
+
+    public void updateFleshCardToDone(){
+        update(FlashCardProgress.DONE);
+        disableAll();
+        nextButton.setDisable(false);
+    }
+
+    private void update(FlashCardProgress flashCardProgress){
+        flashCardClient.updateFlashCard(nextFlashcard,flashCardProgress);
+        disableAll();
+        nextButton.setDisable(false);
     }
 
 }
