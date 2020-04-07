@@ -10,9 +10,9 @@ import java.util.List;
 
 public class NextFleshCardValidator {
 
-    public FetchedFlashCard getFirstFlashCard(){
+    public FetchedFlashCard getFirstFlashCard() {
         FlashCardClient flashCardClient = new FlashCardClient();
-        List<FetchedFlashCard> flashCards1 = flashCardClient.getFlashCardsByUserIdAndLanguageAndProgress(FlashCardsUI.LOGGED_USER.getId(),FlashCardsUI.LOGGED_USER.getLanguage(), FlashCardProgress.NEW);
+        List<FetchedFlashCard> flashCards1 = flashCardClient.getFlashCardsByUserIdAndLanguageAndProgress(FlashCardsUI.LOGGED_USER.getId(), FlashCardsUI.LOGGED_USER.getLanguage(), FlashCardProgress.NEW);
         List<FetchedFlashCard> flashCards2 = null;
         List<FetchedFlashCard> flashCards3 = null;
         List<FetchedFlashCard> flashCards4 = null;
@@ -20,17 +20,17 @@ public class NextFleshCardValidator {
         if (!flashCards1.isEmpty()) {
             return nextFleshCard(flashCards1);
         } else {
-            flashCards2 = flashCardClient.getFlashCardsByUserIdAndLanguageAndProgress(FlashCardsUI.LOGGED_USER.getId(),FlashCardsUI.LOGGED_USER.getLanguage(), FlashCardProgress.BAD);
+            flashCards2 = flashCardClient.getFlashCardsByUserIdAndLanguageAndProgress(FlashCardsUI.LOGGED_USER.getId(), FlashCardsUI.LOGGED_USER.getLanguage(), FlashCardProgress.BAD);
         }
         if (!flashCards2.isEmpty()) {
             return nextFleshCard(flashCards2);
         } else {
-            flashCards3 = flashCardClient.getFlashCardsByUserIdAndLanguageAndProgress(FlashCardsUI.LOGGED_USER.getId(),FlashCardsUI.LOGGED_USER.getLanguage(), FlashCardProgress.GOOD);
+            flashCards3 = flashCardClient.getFlashCardsByUserIdAndLanguageAndProgress(FlashCardsUI.LOGGED_USER.getId(), FlashCardsUI.LOGGED_USER.getLanguage(), FlashCardProgress.GOOD);
         }
         if (!flashCards3.isEmpty()) {
             return nextFleshCard(flashCards3);
         } else {
-            flashCards4 = flashCardClient.getFlashCardsByUserIdAndLanguageAndProgress(FlashCardsUI.LOGGED_USER.getId(),FlashCardsUI.LOGGED_USER.getLanguage(), FlashCardProgress.DONE);
+            flashCards4 = flashCardClient.getFlashCardsByUserIdAndLanguageAndProgress(FlashCardsUI.LOGGED_USER.getId(), FlashCardsUI.LOGGED_USER.getLanguage(), FlashCardProgress.DONE);
         }
         if (!flashCards4.isEmpty()) {
             return nextFleshCard(flashCards4);
@@ -39,7 +39,7 @@ public class NextFleshCardValidator {
     }
 
 
-    private FetchedFlashCard nextFleshCard(List<FetchedFlashCard> fetchedFlashCards){
+    private FetchedFlashCard nextFleshCard(List<FetchedFlashCard> fetchedFlashCards) {
         return fetchedFlashCards.stream()
                 .min(Comparator.comparing(FetchedFlashCard::getUpdated))
                 .get();

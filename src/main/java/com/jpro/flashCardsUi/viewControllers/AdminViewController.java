@@ -36,10 +36,10 @@ public class AdminViewController implements Initializable {
         TableColumn name = new TableColumn("USERNAME");
         TableColumn email = new TableColumn("EMAIL");
 
-        usersTable.getColumns().addAll(id,name,email);
+        usersTable.getColumns().addAll(id, name, email);
         addButtonToTable();
 
-        data = updateList() ;
+        data = updateList();
 
         id.setCellValueFactory(new PropertyValueFactory<TableViewUser, Long>("id"));
 
@@ -59,6 +59,7 @@ public class AdminViewController implements Initializable {
                 final TableCell<TableViewUser, Void> cell = new TableCell<TableViewUser, Void>() {
 
                     private final Button btn = new JFXButton("DELETE");
+
                     {
                         btn.setOnAction((ActionEvent event) -> {
                             TableViewUser user = getTableView().getItems().get(getIndex());
@@ -67,6 +68,7 @@ public class AdminViewController implements Initializable {
                             usersTable.setItems(data);
                         });
                     }
+
                     @Override
                     public void updateItem(Void item, boolean empty) {
                         super.updateItem(item, empty);
@@ -84,8 +86,8 @@ public class AdminViewController implements Initializable {
         usersTable.getColumns().add(colBtn);
     }
 
-    private ObservableList<TableViewUser> updateList(){
-       return FXCollections.observableArrayList(userMapper.mapToMappedUsersList(userClient.getUsers()));
+    private ObservableList<TableViewUser> updateList() {
+        return FXCollections.observableArrayList(userMapper.mapToMappedUsersList(userClient.getUsers()));
     }
 
 }

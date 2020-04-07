@@ -14,8 +14,8 @@ public class UserMapper {
 
 
     public List<TableViewUser> mapToMappedUsersList(List<FetchedUser> fetchedUsers) {
-      return fetchedUsers.stream()
-              .map(user -> new TableViewUser(user.getId(),user.getName(),user.getEmail()))
-              .collect(Collectors.toList());
+        return fetchedUsers.stream()
+                .map(user -> new TableViewUser(user.getId(), user.getName(), user.getEmail()))
+                .collect(Collectors.toList());
     }
 }

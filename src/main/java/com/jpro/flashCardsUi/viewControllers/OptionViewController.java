@@ -39,8 +39,9 @@ public class OptionViewController implements Initializable {
         this.mainViewController = mainViewController;
     }
 
-    List<Language> list = new ArrayList<>(Arrays.asList(Language.ENGLISH,Language.FRENCH,Language.GERMAN,Language.SPANISH));
+    List<Language> list = new ArrayList<>(Arrays.asList(Language.ENGLISH, Language.FRENCH, Language.GERMAN, Language.SPANISH));
     ObservableList<Language> observableList = FXCollections.observableList(list);
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         userClient = new UserClient();
@@ -48,7 +49,7 @@ public class OptionViewController implements Initializable {
         comboBox.setItems(observableList);
         comboBox.setValue(LOGGED_USER.getLanguage());
 
-        if(LOGGED_USER.getUserAppColor()== UserAppColor.DARK){
+        if (LOGGED_USER.getUserAppColor() == UserAppColor.DARK) {
             toggleButton.setSelected(true);
             toggleButton.setText("ON");
         } else {
@@ -60,7 +61,7 @@ public class OptionViewController implements Initializable {
             @Override
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
 
-                if(toggleButton.isSelected()==true){
+                if (toggleButton.isSelected() == true) {
                     toggleButton.setText("ON");
                     LOGGED_USER.setUserAppColor(UserAppColor.DARK);
                     mainViewController.setAppColor(UserAppColor.DARK);
@@ -74,12 +75,12 @@ public class OptionViewController implements Initializable {
     }
 
     @FXML
-    private void comboChanged(){
+    private void comboChanged() {
         LOGGED_USER.setLanguage(comboBox.getValue());
     }
 
     @FXML
-    private void updateUser(){
+    private void updateUser() {
         userClient.updateUser(LOGGED_USER);
     }
 }

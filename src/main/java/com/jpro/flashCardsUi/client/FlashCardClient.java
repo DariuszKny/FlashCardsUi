@@ -19,14 +19,14 @@ public class FlashCardClient {
     public List<FetchedFlashCard> getFlashCardsByUserIdAndLanguage(Long id, Language language) {
         RestTemplate restTemplate = new RestTemplate();
         URI url = UriComponentsBuilder.fromHttpUrl("http://localhost:8080/v1/flashCard/getFlashCards")
-                .queryParam("userId",id)
-                .queryParam("language",language)
+                .queryParam("userId", id)
+                .queryParam("language", language)
                 .build().encode().toUri();
-        try{
+        try {
             FetchedFlashCard[] boardResponse = restTemplate.getForObject(url, FetchedFlashCard[].class);
             return Arrays.asList(Optional.ofNullable(boardResponse).orElse(new FetchedFlashCard[0]));
         } catch (RestClientException e) {
-            LOGGER.error(e.getMessage(),e);
+            LOGGER.error(e.getMessage(), e);
             return new ArrayList<>();
         }
     }
@@ -34,34 +34,34 @@ public class FlashCardClient {
     public FetchedFlashCard getFlashCard(Long id) {
         RestTemplate restTemplate = new RestTemplate();
         URI url = UriComponentsBuilder.fromHttpUrl("http://localhost:8080/v1/flashCard/getFlashCard")
-                .queryParam("flashCardId",id)
+                .queryParam("flashCardId", id)
                 .build().encode().toUri();
-        try{
+        try {
             FetchedFlashCard boardResponse = restTemplate.getForObject(url, FetchedFlashCard.class);
             return boardResponse;
         } catch (RestClientException e) {
-            LOGGER.error(e.getMessage(),e);
+            LOGGER.error(e.getMessage(), e);
         }
-       return null;
+        return null;
     }
 
     public List<FetchedFlashCard> getFlashCardsByUserIdAndLanguageAndProgress(Long id, Language language, FlashCardProgress flashCardProgress) {
         RestTemplate restTemplate = new RestTemplate();
         URI url = UriComponentsBuilder.fromHttpUrl("http://localhost:8080/v1/flashCard/getFlashCardsByProgress")
-                .queryParam("userId",id)
-                .queryParam("language",language)
-                .queryParam("flashCardProgress",flashCardProgress)
+                .queryParam("userId", id)
+                .queryParam("language", language)
+                .queryParam("flashCardProgress", flashCardProgress)
                 .build().encode().toUri();
-        try{
+        try {
             FetchedFlashCard[] boardResponse = restTemplate.getForObject(url, FetchedFlashCard[].class);
             return Arrays.asList(Optional.ofNullable(boardResponse).orElse(new FetchedFlashCard[0]));
         } catch (RestClientException e) {
-            LOGGER.error(e.getMessage(),e);
+            LOGGER.error(e.getMessage(), e);
             return new ArrayList<>();
         }
     }
 
-    public void addFlashCard(String name, FetchedUser fetchedUser, FetchedAmazonCard fetchedAmazonCard){
+    public void addFlashCard(String name, FetchedUser fetchedUser, FetchedAmazonCard fetchedAmazonCard) {
         String url = "http://localhost:8080/v1/flashCard/addFlashCard";
         RestTemplate restTemplate = new RestTemplate();
 
@@ -89,7 +89,7 @@ public class FlashCardClient {
         }
     }
 
-    public void updateFlashCard(FetchedFlashCard fetchedFlashCard, FlashCardProgress flashCardProgress){
+    public void updateFlashCard(FetchedFlashCard fetchedFlashCard, FlashCardProgress flashCardProgress) {
         String url = "http://localhost:8080/v1/flashCard/updateFlashCard";
         RestTemplate restTemplate = new RestTemplate();
 
@@ -102,12 +102,12 @@ public class FlashCardClient {
     public void deleteFlashCard(Long flashCardId) {
         RestTemplate restTemplate = new RestTemplate();
         URI url = UriComponentsBuilder.fromHttpUrl("http://localhost:8080/v1/flashCard/deleteFlashCard")
-                .queryParam("flashCardId",flashCardId)
+                .queryParam("flashCardId", flashCardId)
                 .build().encode().toUri();
-        try{
+        try {
             restTemplate.delete(url);
         } catch (RestClientException e) {
-            LOGGER.error(e.getMessage(),e);
+            LOGGER.error(e.getMessage(), e);
         }
     }
 }

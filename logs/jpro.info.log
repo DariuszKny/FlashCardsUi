@@ -7132,3 +7132,27 @@ Caused by: java.lang.IllegalStateException: showAndWait is not allowed during an
 	at com.jpro.flashCardsUi.viewControllers.LoginMenuController.create(LoginMenuController.java:59)
 	... 84 common frames omitted
 2020-03-30 22:47:37,076 [INFO] from com.jpro.internal.communicator.InstanceImpl in JavaFX Application Thread - closing window!
+2020-04-07 22:59:13,428 [INFO] from akka.event.slf4j.Slf4jLogger in application-akka.actor.default-dispatcher-3 - Slf4jLogger started
+2020-04-07 22:59:13,825 [INFO] from com.jpro.activity in Thread-0 - Starting the server
+2020-04-07 22:59:13,826 [INFO] from com.jpro.internal.server.Initializer$ in Thread-0 -  *** Starting JPro: https://www.jpro.one/ ***
+2020-04-07 22:59:13,826 [INFO] from com.jpro.internal.server.Initializer$ in Thread-0 - OS: Windows 10
+2020-04-07 22:59:13,849 [INFO] from com.jpro.internal.server.Initializer$ in Thread-0 - JPro: 2019.2.2
+2020-04-07 22:59:13,849 [INFO] from com.jpro.internal.server.Initializer$ in Thread-0 - Java version: 1.8.0_221
+2020-04-07 22:59:13,849 [INFO] from com.jpro.internal.server.Initializer$ in Thread-0 - JVM: 1.8.0_221 Oracle Corporation
+2020-04-07 22:59:13,879 [INFO] from com.jpro.internal.server.Initializer$ in Thread-0 - redirected OUT / ERR
+2020-04-07 22:59:13,879 [INFO] from com.jpro.internal.server.Initializer$ in Thread-0 - installed SLF4JBridge
+2020-04-07 22:59:13,941 [INFO] from com.jpro.internal.server.MonocleInitializer$ in Thread-0 - screen: null
+2020-04-07 22:59:14,834 [INFO] from com.jpro.internal.server.Initializer$ in Thread-0 - finished init!
+2020-04-07 22:59:14,855 [INFO] from com.jpro.internal.server.Initializer$ in JavaFX Application Thread - JavaFX version: 8.0.221-b09
+2020-04-07 22:59:14,910 [INFO] from com.jpro.internal.chart.model.DynamicDataModel in JavaFX Application Thread - Started Monitoring chart data...
+2020-04-07 22:59:15,243 [INFO] from com.jpro.internal.chart.model.ChartJSONImExporter in JavaFX Application Thread - Imported chart data Tue Apr 07 22:59:14 CEST 2020
+2020-04-07 22:59:15,502 [INFO] from play.api.Play in Thread-0 - Application started (Prod)
+2020-04-07 22:59:16,674 [INFO] from play.core.server.AkkaHttpServer in Thread-0 - Listening for HTTP on /0:0:0:0:0:0:0:0:8181
+2020-04-07 22:59:18,447 [WARN] from controllers.jpro in application-akka.actor.default-dispatcher-6 - jpro.plainFile - Couldn't get resource for: 'jpro/html/favicon.ico'
+2020-04-07 22:59:18,454 [INFO] from controllers.jpro in application-akka.actor.default-dispatcher-2 - application requested: 0!hellojproxx
+2020-04-07 22:59:18,477 [INFO] from controllers.jpro in application-akka.actor.default-dispatcher-2 - Creating Application: 0!hellojproxx
+2020-04-07 22:59:18,480 [INFO] from controllers.jpro in application-akka.actor.default-dispatcher-2 - remoteAddress 0:0:0:0:0:0:0:1
+2020-04-07 22:59:18,483 [INFO] from controllers.jpro in application-akka.actor.default-dispatcher-2 - host          localhost:8181
+2020-04-07 22:59:18,483 [INFO] from controllers.jpro in application-akka.actor.default-dispatcher-2 - uri           /app/0!hellojproxx
+2020-04-07 22:59:19,717 [INFO] from com.jpro.internal.server.ViewSerializerActor in JavaFX Application Thread - appdef: AppByMain(hellojproxx,com.jpro.flashCardsUi.FlashCardsUI,None,NamedClassLoader(system),false) clientinfo: ClientInfo(http://localhost:8181/,http://localhost:8181/app/hellojproxx,1680.0,939.0,false,en-US,List(en-US, en, pl, de),Map(Idea-3a907b51 -> 11107079-17fb-4048-8c8c-d186c1c37e2d, Idea-d2af4e72 -> 1a4aa392-60e3-4b59-85a7-b68ef39d14d0, Webstorm-2be979cb -> f965e0fd-7422-4e40-bba8-6e79286ffa8e))out: Actor[akka://application/system/StreamSupervisor-0/flow-11-2-actorRefSource#-1090451959]
+2020-04-07 22:59:20,432 [INFO] from com.jpro.JS in JavaFX Application Thread - received msg: new MainID: 1281 userid: 1361512262

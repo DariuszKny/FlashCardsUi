@@ -4,7 +4,7 @@ import javafx.beans.property.SimpleLongProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.scene.control.Button;
 
-public  class TableViewUser {
+public class TableViewUser {
 
     private SimpleLongProperty id;
     private SimpleStringProperty name;
@@ -13,8 +13,8 @@ public  class TableViewUser {
 
     public TableViewUser(Long id, String name, String email) {
         this.id = new SimpleLongProperty(id);
-        this.name = new SimpleStringProperty(name);;
-        this.email = new SimpleStringProperty(email);;
+        this.name = new SimpleStringProperty(name);
+        this.email = new SimpleStringProperty(email);
         this.button = new Button();
         button.setText("DELETE");
     }
@@ -30,6 +30,7 @@ public  class TableViewUser {
     public String getName() {
         return name.get();
     }
+
     public void setName(String name) {
         this.name.set(name);
     }

@@ -53,11 +53,11 @@ public class LoginMenuController implements Initializable {
         LoginValidator userValidator = new LoginValidator(name, password, confirmPassword);
         FetchedUser fetchedUser = userValidator.validatedUser();
 
-        if (fetchedUser==null) {
-            alert("Username Invalid", "Wrong username, or password");
+        if (fetchedUser == null) {
+            //alert("Username Invalid", "Wrong username, or password");
         } else {
-            alert("User Logged", "You may use FlashCards!");
-            FlashCardsUI.LOGGED_USER=fetchedUser;
+            //alert("User Logged", "You may use FlashCards!");
+            FlashCardsUI.LOGGED_USER = fetchedUser;
             mainViewController.setAppColor(FlashCardsUI.LOGGED_USER.getUserAppColor());
             mainViewController.setPermission();
             mainViewController.handleButtonOne();
@@ -65,14 +65,13 @@ public class LoginMenuController implements Initializable {
     }
 
     @FXML
-    public void alert(String title, String content){
+    public void alert(String title, String content) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle(title);
         alert.setContentText(content);
         alert.setHeaderText(null);
         alert.showAndWait();
     }
-
 
 
 }

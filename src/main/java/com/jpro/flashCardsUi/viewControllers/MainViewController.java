@@ -17,7 +17,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 
-public  class MainViewController implements Initializable {
+public class MainViewController implements Initializable {
 
 
     protected JProApplication jProApplication;
@@ -32,11 +32,11 @@ public  class MainViewController implements Initializable {
     @FXML
     private VBox sideBar;
 
-   @FXML
-   private BorderPane mainPane;
+    @FXML
+    private BorderPane mainPane;
 
-   @FXML
-   private JFXButton buttonOne;
+    @FXML
+    private JFXButton buttonOne;
 
     @FXML
     private JFXButton buttonTwo;
@@ -56,49 +56,53 @@ public  class MainViewController implements Initializable {
     @FXML
     private JFXButton adminButton;
 
-   @FXML
-   public void handleButtonOne(){
-       FxmlLoader loader= new FxmlLoader(this);
-       Pane view = loader.getView("LearnView");
-
-       mainPane.setCenter(view);
-   }
     @FXML
-    public void handleButtonTwo(){
-        FxmlLoader loader= new FxmlLoader(this);
+    public void handleButtonOne() {
+        FxmlLoader loader = new FxmlLoader(this);
+        Pane view = loader.getView("LearnView");
+
+        mainPane.setCenter(view);
+    }
+
+    @FXML
+    public void handleButtonTwo() {
+        FxmlLoader loader = new FxmlLoader(this);
         Pane view = loader.getView("MenageView");
         mainPane.setCenter(view);
     }
+
     @FXML
-    public void handleButtonThree(){
-        FxmlLoader loader= new FxmlLoader(this);
+    public void handleButtonThree() {
+        FxmlLoader loader = new FxmlLoader(this);
         Pane view = loader.getView("OptionView");
         mainPane.setCenter(view);
     }
+
     @FXML
-    public void handleButtonFour(){
-        FxmlLoader loader= new FxmlLoader(this);
+    public void handleButtonFour() {
+        FxmlLoader loader = new FxmlLoader(this);
         Pane view = loader.getView("LoginView");
         mainPane.setCenter(view);
     }
+
     @FXML
-    public void handleButtonFive(){
-        FxmlLoader loader= new FxmlLoader(this);
+    public void handleButtonFive() {
+        FxmlLoader loader = new FxmlLoader(this);
         Pane view = loader.getView("RegisterView");
         mainPane.setCenter(view);
     }
 
     @FXML
-    public void handleButtonSix(){
-        FlashCardsUI.LOGGED_USER=null;
-        alert("Logged Out","You successfully logged");
+    public void handleButtonSix() {
+        FlashCardsUI.LOGGED_USER = null;
+        alert("Logged Out", "You successfully logged");
         setPermission();
         handleButtonFour();
     }
 
     @FXML
-    public void handleAdminButton(){
-        FxmlLoader loader= new FxmlLoader(this);
+    public void handleAdminButton() {
+        FxmlLoader loader = new FxmlLoader(this);
         Pane view = loader.getView("AdminView");
         mainPane.setCenter(view);
     }
@@ -106,17 +110,17 @@ public  class MainViewController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-       adminButton.setVisible(false);
-       adminButton.setDisable(true);
-       setPermission();
+        adminButton.setVisible(false);
+        adminButton.setDisable(true);
+        setPermission();
     }
 
     public void init(JProApplication jProApplication) {
         this.jProApplication = jProApplication;
     }
 
-    public void setPermission(){
-        if(FlashCardsUI.LOGGED_USER==null){
+    public void setPermission() {
+        if (FlashCardsUI.LOGGED_USER == null) {
             buttonOne.setDisable(true);
             buttonTwo.setDisable(true);
             buttonThree.setDisable(true);
@@ -133,13 +137,13 @@ public  class MainViewController implements Initializable {
             buttonFive.setDisable(true);
             buttonSix.setDisable(false);
         }
-        if(FlashCardsUI.LOGGED_USER!=null && FlashCardsUI.LOGGED_USER.getName().equals("admin")) {
+        if (FlashCardsUI.LOGGED_USER != null && FlashCardsUI.LOGGED_USER.getName().equals("admin")) {
             adminButton.setVisible(true);
             adminButton.setDisable(false);
         }
     }
 
-    public void alert(String title, String content){
+    public void alert(String title, String content) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle(title);
         alert.setContentText(content);
@@ -147,16 +151,16 @@ public  class MainViewController implements Initializable {
         alert.showAndWait();
     }
 
-    public void setAppColor(UserAppColor userAppColor){
-       if(userAppColor==UserAppColor.DARK){
-           root.setStyle("-fx-background-color: #292826");
-           upBar.setStyle("-fx-background-color: #292826");
-           sideBar.setStyle("-fx-background-color: #292826");
-       } else {
-           root.setStyle("-fx-background-color: #eec1ad");
+    public void setAppColor(UserAppColor userAppColor) {
+        if (userAppColor == UserAppColor.DARK) {
+            root.setStyle("-fx-background-color: #292826");
+            upBar.setStyle("-fx-background-color: #292826");
+            sideBar.setStyle("-fx-background-color: #292826");
+        } else {
+            root.setStyle("-fx-background-color: #eec1ad");
 
-           upBar.setStyle("-fx-background-color: #dbac98");
-           sideBar.setStyle("-fx-background-color: #c98276");
-       }
+            upBar.setStyle("-fx-background-color: #dbac98");
+            sideBar.setStyle("-fx-background-color: #c98276");
+        }
     }
 }

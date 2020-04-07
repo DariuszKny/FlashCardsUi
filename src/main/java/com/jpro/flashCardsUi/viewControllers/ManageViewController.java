@@ -70,40 +70,40 @@ public class ManageViewController implements Initializable {
 
         data = updateList();
 
-            tableView.getColumns().addAll(id, name, language, flashCardProgress);
-            addRevertButtonToTable();
-            addDeleteButtonToTable();
+        tableView.getColumns().addAll(id, name, language, flashCardProgress);
+        addRevertButtonToTable();
+        addDeleteButtonToTable();
 
-            id.setCellValueFactory(new PropertyValueFactory<TableViewFlashCard, Long>("id"));
-            name.setCellValueFactory(new PropertyValueFactory<TableViewFlashCard, String>("name"));
-            language.setCellValueFactory(new PropertyValueFactory<TableViewFlashCard, String>("language"));
-            flashCardProgress.setCellValueFactory(new PropertyValueFactory<TableViewFlashCard, String>("flashCardProgress"));
+        id.setCellValueFactory(new PropertyValueFactory<TableViewFlashCard, Long>("id"));
+        name.setCellValueFactory(new PropertyValueFactory<TableViewFlashCard, String>("name"));
+        language.setCellValueFactory(new PropertyValueFactory<TableViewFlashCard, String>("language"));
+        flashCardProgress.setCellValueFactory(new PropertyValueFactory<TableViewFlashCard, String>("flashCardProgress"));
 
-            tableView.setItems(data);
+        tableView.setItems(data);
 
     }
 
-    public void translate(){
+    public void translate() {
         amazonCardText = amazonCardClient.getTranslate(toTranslateText.getText(), LOGGED_USER.getLanguage());
         translatedText.setText(amazonCardText);
     }
 
-    public void createFlashCard(){
-        FetchedAmazonCard amazonCardDto = new FetchedAmazonCard(null,amazonCardOutputStream,amazonCardText);
-        flashCardClient.addFlashCard(toTranslateText.getText(),LOGGED_USER,amazonCardDto);
+    public void createFlashCard() {
+        FetchedAmazonCard amazonCardDto = new FetchedAmazonCard(null, amazonCardOutputStream, amazonCardText);
+        flashCardClient.addFlashCard(toTranslateText.getText(), LOGGED_USER, amazonCardDto);
         data = updateList();
         tableView.setItems(data);
     }
 
-    public void play() throws Exception{
-        amazonCardOutputStream = amazonCardClient.getAudio(translatedText.getText(),LOGGED_USER.getLanguage());
+    public void play() throws Exception {
+        amazonCardOutputStream = amazonCardClient.getAudio(translatedText.getText(), LOGGED_USER.getLanguage());
         InputStream inputStream = new ByteArrayInputStream(amazonCardOutputStream);
         AdvancedPlayer player = new AdvancedPlayer(inputStream, javazoom.jl.player.FactoryRegistry.systemRegistry().createAudioDevice());
         player.play();
     }
 
-    private ObservableList<TableViewFlashCard> updateList(){
-        return FXCollections.observableArrayList(flashCardMapper.mapToTableViewFlashCardList(flashCardClient.getFlashCardsByUserIdAndLanguage(LOGGED_USER.getId(),LOGGED_USER.getLanguage())));
+    private ObservableList<TableViewFlashCard> updateList() {
+        return FXCollections.observableArrayList(flashCardMapper.mapToTableViewFlashCardList(flashCardClient.getFlashCardsByUserIdAndLanguage(LOGGED_USER.getId(), LOGGED_USER.getLanguage())));
     }
 
     private void addRevertButtonToTable() {
@@ -126,6 +126,7 @@ public class ManageViewController implements Initializable {
                             tableView.setItems(data);
                         });
                     }
+
                     @Override
                     public void updateItem(Void item, boolean empty) {
                         super.updateItem(item, empty);
@@ -152,6 +153,7 @@ public class ManageViewController implements Initializable {
                 final TableCell<TableViewFlashCard, Void> cell = new TableCell<TableViewFlashCard, Void>() {
 
                     private final Button btn = new JFXButton("DELETE");
+
                     {
                         btn.setStyle("-fx-background-color: #ba4a4a; -fx-opacity: 0.70");
                         btn.setOnAction((ActionEvent event) -> {
@@ -161,6 +163,7 @@ public class ManageViewController implements Initializable {
                             tableView.setItems(data);
                         });
                     }
+
                     @Override
                     public void updateItem(Void item, boolean empty) {
                         super.updateItem(item, empty);

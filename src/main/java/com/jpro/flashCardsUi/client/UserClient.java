@@ -22,12 +22,12 @@ public class UserClient {
     public List<FetchedUser> getUsers() {
         RestTemplate restTemplate = new RestTemplate();
         URI url = UriComponentsBuilder.fromHttpUrl("http://localhost:8080/v1/user/getUsers")
-               .build().encode().toUri();
-        try{
+                .build().encode().toUri();
+        try {
             FetchedUser[] boardResponse = restTemplate.getForObject(url, FetchedUser[].class);
             return Arrays.asList(Optional.ofNullable(boardResponse).orElse(new FetchedUser[0]));
         } catch (RestClientException e) {
-            LOGGER.error(e.getMessage(),e);
+            LOGGER.error(e.getMessage(), e);
             return new ArrayList<>();
         }
     }
@@ -35,17 +35,17 @@ public class UserClient {
     public void deleteUser(Long userId) {
         RestTemplate restTemplate = new RestTemplate();
         URI url = UriComponentsBuilder.fromHttpUrl("http://localhost:8080/v1/user/deleteUser")
-                .queryParam("userId",userId)
+                .queryParam("userId", userId)
                 .build().encode().toUri();
-        try{
+        try {
             restTemplate.delete(url);
         } catch (RestClientException e) {
-            LOGGER.error(e.getMessage(),e);
+            LOGGER.error(e.getMessage(), e);
         }
     }
 
 
-    public void addUser(String name,String mail,String password){
+    public void addUser(String name, String mail, String password) {
         String url = "http://localhost:8080/v1/user/addUser";
         RestTemplate restTemplate = new RestTemplate();
 
@@ -72,7 +72,7 @@ public class UserClient {
         }
     }
 
-    public void updateUser(FetchedUser fetchedUser){
+    public void updateUser(FetchedUser fetchedUser) {
         String url = "http://localhost:8080/v1/user/updateUser";
         RestTemplate restTemplate = new RestTemplate();
 

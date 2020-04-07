@@ -18,7 +18,7 @@ public class FlashCardMapper {
 
     public List<TableViewFlashCard> mapToTableViewFlashCardList(List<FetchedFlashCard> fetchedFlashCardList) {
         return fetchedFlashCardList.stream()
-                .map(flashCard -> new TableViewFlashCard(flashCard.getId(),flashCard.getName(),flashCard.getLanguage(),flashCard.getFlashCardProgress()))
+                .map(flashCard -> new TableViewFlashCard(flashCard.getId(), flashCard.getName(), flashCard.getLanguage(), flashCard.getFlashCardProgress()))
                 .collect(Collectors.toList());
     }
 

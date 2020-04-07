@@ -27,22 +27,21 @@ public class FxmlLoader {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(FlashCardsUI.class.getResource("fxml/" + fileName + ".fxml"));
             view = loader.load();
-            controllerInit(fileName,loader);
-        } catch (Exception e){
+            controllerInit(fileName, loader);
+        } catch (Exception e) {
         }
         return view;
     }
 
-    private void controllerInit(String fileName, FXMLLoader loader){
-        if(fileName.equals("LoginView")){
+    private void controllerInit(String fileName, FXMLLoader loader) {
+        if (fileName.equals("LoginView")) {
             LoginMenuController controller = loader.getController();
             controller.init(mainViewController);
-        } else if(fileName.equals("OptionView")) {
+        } else if (fileName.equals("OptionView")) {
             OptionViewController controller = loader.getController();
             controller.init(mainViewController);
         }
     }
-
 
 
 }

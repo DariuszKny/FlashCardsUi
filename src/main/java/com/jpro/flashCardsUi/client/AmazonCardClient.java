@@ -17,28 +17,28 @@ public class AmazonCardClient {
         RestTemplate restTemplate = new RestTemplate();
         byte[] bytes = null;
         URI url = UriComponentsBuilder.fromHttpUrl("http://localhost:8080/v1/amazonCard/getAudio")
-                .queryParam("text",text)
-                .queryParam("language",language)
+                .queryParam("text", text)
+                .queryParam("language", language)
                 .build().encode().toUri();
-        try{
-             bytes = restTemplate.getForObject(url,byte[].class);
+        try {
+            bytes = restTemplate.getForObject(url, byte[].class);
         } catch (RestClientException e) {
-            LOGGER.error(e.getMessage(),e);
+            LOGGER.error(e.getMessage(), e);
         }
         return bytes;
     }
 
-    public String getTranslate(String text,Language language) {
+    public String getTranslate(String text, Language language) {
         RestTemplate restTemplate = new RestTemplate();
         String translate = "";
         URI url = UriComponentsBuilder.fromHttpUrl("http://localhost:8080/v1/amazonCard/getTranslate")
-                .queryParam("text",text)
-                .queryParam("language",language)
+                .queryParam("text", text)
+                .queryParam("language", language)
                 .build().encode().toUri();
-        try{
+        try {
             translate = restTemplate.getForObject(url, String.class);
         } catch (RestClientException e) {
-            LOGGER.error(e.getMessage(),e);
+            LOGGER.error(e.getMessage(), e);
         }
         return translate;
     }

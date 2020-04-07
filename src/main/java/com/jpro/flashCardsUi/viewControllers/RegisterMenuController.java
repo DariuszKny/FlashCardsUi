@@ -41,7 +41,7 @@ public class RegisterMenuController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-         userClient = new UserClient();
+        userClient = new UserClient();
     }
 
     @FXML
@@ -54,20 +54,20 @@ public class RegisterMenuController implements Initializable {
         NewUserValidator userValidator = new NewUserValidator(name, mail, password, confirmPassword);
 
         if (!userValidator.validateName()) {
-            alert("Username Invalid", "Username already taken, or invalid\nPlease try another one");
+           // alert("Username Invalid", "Username already taken, or invalid\nPlease try another one");
         } else if (!userValidator.validateEmail()) {
-            alert("Wrong Email", "Please provide correct mail address");
+           // alert("Wrong Email", "Please provide correct mail address");
         } else if (!userValidator.validatePassword()) {
-            alert("Password incorrect", "Provided password does not match");
+           // alert("Password incorrect", "Provided password does not match");
         } else {
-            alert("User Registered", "You may now login!");
+           // alert("User Registered", "You may now login!");
             userClient.addUser(name, mail, password);
         }
 
     }
 
     @FXML
-    public void alert(String title, String content){
+    public void alert(String title, String content) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle(title);
         alert.setContentText(content);

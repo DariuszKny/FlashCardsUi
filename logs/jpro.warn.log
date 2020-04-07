@@ -3825,3 +3825,4 @@ Caused by: java.lang.IllegalStateException: showAndWait is not allowed during an
 	at com.jpro.flashCardsUi.viewControllers.LoginMenuController.alert(LoginMenuController.java:72)
 	at com.jpro.flashCardsUi.viewControllers.LoginMenuController.create(LoginMenuController.java:59)
 	... 84 common frames omitted
+2020-04-07 22:59:18,447 [WARN] from controllers.jpro in application-akka.actor.default-dispatcher-6 - jpro.plainFile - Couldn't get resource for: 'jpro/html/favicon.ico'

@@ -51,7 +51,7 @@ public class LearnViewController implements Initializable {
         disableAll();
     }
 
-    private void disableAll(){
+    private void disableAll() {
         checkButton.setDisable(true);
         newButton.setDisable(true);
         badButton.setDisable(true);
@@ -59,12 +59,12 @@ public class LearnViewController implements Initializable {
         doneButton.setDisable(true);
     }
 
-    private void clearText(){
+    private void clearText() {
         inputTextField.setText("");
         outputTextField.setText("");
     }
 
-    public void nextFleshCard(){
+    public void nextFleshCard() {
         NextFleshCardValidator nextFleshCardValidator = new NextFleshCardValidator();
         nextFlashcard = nextFleshCardValidator.getFirstFlashCard();
         inputTextField.setText(nextFlashcard.getName());
@@ -72,7 +72,7 @@ public class LearnViewController implements Initializable {
         checkButton.setDisable(false);
     }
 
-    public void checkFleshCard() throws  Exception{
+    public void checkFleshCard() throws Exception {
         byte[] amazonCardOutputStream = nextFlashcard.getAmazonCardDto().getBytes();
         InputStream inputStream = new ByteArrayInputStream(amazonCardOutputStream);
         AdvancedPlayer player = new AdvancedPlayer(inputStream, javazoom.jl.player.FactoryRegistry.systemRegistry().createAudioDevice());
@@ -86,40 +86,39 @@ public class LearnViewController implements Initializable {
         doneButton.setDisable(false);
     }
 
-    public void updateFleshCardToNew(){
+    public void updateFleshCardToNew() {
         update(FlashCardProgress.NEW);
         disableAll();
         nextButton.setDisable(false);
         clearText();
     }
 
-    public void updateFleshCardToBad(){
+    public void updateFleshCardToBad() {
         update(FlashCardProgress.BAD);
         disableAll();
         nextButton.setDisable(false);
         clearText();
     }
 
-    public void updateFleshCardToGood(){
+    public void updateFleshCardToGood() {
         update(FlashCardProgress.GOOD);
         disableAll();
         nextButton.setDisable(false);
         clearText();
     }
 
-    public void updateFleshCardToDone(){
+    public void updateFleshCardToDone() {
         update(FlashCardProgress.DONE);
         disableAll();
         nextButton.setDisable(false);
     }
 
-    private void update(FlashCardProgress flashCardProgress){
-        flashCardClient.updateFlashCard(nextFlashcard,flashCardProgress);
+    private void update(FlashCardProgress flashCardProgress) {
+        flashCardClient.updateFlashCard(nextFlashcard, flashCardProgress);
         disableAll();
         nextButton.setDisable(false);
         clearText();
     }
-
 
 
 }
