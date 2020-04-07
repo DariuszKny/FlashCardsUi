@@ -942,3 +942,20 @@
 2020-04-07 23:03:04,570 [INFO] in scala-execution-context-global-44 - 23:03:04.564 [JavaFX Application Thread] DEBUG org.springframework.web.client.RestTemplate - Accept=[application/json, application/*+json]
 2020-04-07 23:03:04,577 [INFO] in scala-execution-context-global-44 - 23:03:04.575 [JavaFX Application Thread] DEBUG org.springframework.web.client.RestTemplate - Response 200 OK
 2020-04-07 23:03:04,577 [INFO] in scala-execution-context-global-44 - 23:03:04.576 [JavaFX Application Thread] DEBUG org.springframework.web.client.RestTemplate - Reading to [com.jpro.flashCardsUi.domain.FetchedFlashCard[]]
+2020-04-08 00:10:49,207 [INFO] in scala-execution-context-global-31 - [info] c.j.i.s.Initializer$ - redirected OUT / ERR
+2020-04-08 00:10:49,209 [INFO] in scala-execution-context-global-31 - [info] c.j.i.s.Initializer$ - installed SLF4JBridge
+2020-04-08 00:10:49,209 [INFO] in scala-execution-context-global-31 - [info] c.j.i.s.MonocleInitializer$ - screen: null
+2020-04-08 00:10:49,209 [INFO] in scala-execution-context-global-31 - Warning: Quantum will not submit render jobs, nothing should draw
+2020-04-08 00:10:49,211 [INFO] in scala-execution-context-global-31 - [info] c.j.i.s.Initializer$ - finished init!
+2020-04-08 00:10:49,224 [INFO] in scala-execution-context-global-31 - [info] c.j.i.s.Initializer$ - JavaFX version: 8.0.221-b09
+2020-04-08 00:10:49,256 [INFO] in scala-execution-context-global-31 - [info] c.j.i.c.m.DynamicDataModel - Started Monitoring chart data...
+2020-04-08 00:10:49,549 [INFO] in scala-execution-context-global-31 - [info] c.j.i.c.m.ChartJSONImExporter - Imported chart data Wed Apr 08 00:10:49 CEST 2020
+2020-04-08 00:10:49,828 [INFO] in scala-execution-context-global-31 - [info] play.api.Play - Application started (Prod)
+2020-04-08 00:10:50,832 [INFO] in scala-execution-context-global-31 - [info] p.c.s.AkkaHttpServer - Listening for HTTP on /0:0:0:0:0:0:0:0:8181
+2020-04-08 00:10:52,321 [INFO] in scala-execution-context-global-31 - [info] c.jpro - application requested: 0!hellojproxx
+2020-04-08 00:10:52,339 [INFO] in scala-execution-context-global-31 - [info] c.jpro - Creating Application: 0!hellojproxx
+2020-04-08 00:10:52,343 [INFO] in scala-execution-context-global-31 - [info] c.jpro - remoteAddress 0:0:0:0:0:0:0:1
+2020-04-08 00:10:52,346 [INFO] in scala-execution-context-global-31 - [info] c.jpro - host          localhost:8181
+2020-04-08 00:10:52,350 [INFO] in scala-execution-context-global-31 - [info] c.jpro - uri           /app/0!hellojproxx
+2020-04-08 00:10:53,548 [INFO] in scala-execution-context-global-31 - [info] c.j.i.s.ViewSerializerActor - appdef: AppByMain(hellojproxx,com.jpro.flashCardsUi.FlashCardsUI,None,NamedClassLoader(system),false) clientinfo: ClientInfo(http://localhost:8181/,http://localhost:8181/app/hellojproxx,1680.0,939.0,false,en-US,List(en-US, en, pl, de),Map(Idea-3a907b51 -> 11107079-17fb-4048-8c8c-d186c1c37e2d, Idea-d2af4e72 -> 1a4aa392-60e3-4b59-85a7-b68ef39d14d0, Webstorm-2be979cb -> f965e0fd-7422-4e40-bba8-6e79286ffa8e))out: Actor[akka://application/system/StreamSupervisor-0/flow-10-2-actorRefSource#1133142160]
+2020-04-08 00:10:54,259 [INFO] in scala-execution-context-global-31 - [info] com.jpro.JS - received msg: new MainID: 1281 userid: 1544994128
