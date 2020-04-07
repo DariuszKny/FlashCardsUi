@@ -5,6 +5,7 @@ import com.jfoenix.controls.JFXTextField;
 import com.jpro.flashCardsUi.client.FlashCardClient;
 import com.jpro.flashCardsUi.domain.FetchedFlashCard;
 import com.jpro.flashCardsUi.domain.FlashCardProgress;
+import com.jpro.flashCardsUi.validator.NextFleshCardValidator;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javazoom.jl.player.advanced.AdvancedPlayer;
@@ -12,11 +13,7 @@ import javazoom.jl.player.advanced.AdvancedPlayer;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.net.URL;
-import java.util.Comparator;
-import java.util.List;
 import java.util.ResourceBundle;
-
-import static com.jpro.flashCardsUi.HelloJProFXML.LOGGED_USER;
 
 public class LearnViewController implements Initializable {
 
@@ -68,11 +65,8 @@ public class LearnViewController implements Initializable {
     }
 
     public void nextFleshCard(){
-        List<FetchedFlashCard> flashCards = flashCardClient.getFlashCardsByUserID(LOGGED_USER.getId());
-        FetchedFlashCard first = flashCards.stream()
-                .min(Comparator.comparing(FetchedFlashCard::getUpdated))
-                .get();
-        nextFlashcard = first;
+        NextFleshCardValidator nextFleshCardValidator = new NextFleshCardValidator();
+        nextFlashcard = nextFleshCardValidator.getFirstFlashCard();
         inputTextField.setText(nextFlashcard.getName());
         nextButton.setDisable(true);
         checkButton.setDisable(false);
@@ -96,18 +90,21 @@ public class LearnViewController implements Initializable {
         update(FlashCardProgress.NEW);
         disableAll();
         nextButton.setDisable(false);
+        clearText();
     }
 
     public void updateFleshCardToBad(){
         update(FlashCardProgress.BAD);
         disableAll();
         nextButton.setDisable(false);
+        clearText();
     }
 
     public void updateFleshCardToGood(){
         update(FlashCardProgress.GOOD);
         disableAll();
         nextButton.setDisable(false);
+        clearText();
     }
 
     public void updateFleshCardToDone(){
@@ -120,6 +117,9 @@ public class LearnViewController implements Initializable {
         flashCardClient.updateFlashCard(nextFlashcard,flashCardProgress);
         disableAll();
         nextButton.setDisable(false);
+        clearText();
     }
+
+
 
 }

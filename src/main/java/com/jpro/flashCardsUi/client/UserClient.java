@@ -1,8 +1,8 @@
 package com.jpro.flashCardsUi.client;
 
-import com.jpro.flashCardsUi.UserAppColor;
 import com.jpro.flashCardsUi.domain.FetchedUser;
 import com.jpro.flashCardsUi.domain.Language;
+import com.jpro.flashCardsUi.domain.UserAppColor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.*;
@@ -46,17 +46,13 @@ public class UserClient {
 
 
     public void addUser(String name,String mail,String password){
-        // request url
         String url = "http://localhost:8080/v1/user/addUser";
-
-
         RestTemplate restTemplate = new RestTemplate();
 
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
         headers.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON));
 
-// request body parameters
         Map<String, Object> map = new HashMap<>();
         map.put("name", name);
         map.put("password", password);
@@ -74,6 +70,13 @@ public class UserClient {
             System.out.println("Request Failed");
             System.out.println(response.getStatusCode());
         }
+    }
+
+    public void updateUser(FetchedUser fetchedUser){
+        String url = "http://localhost:8080/v1/user/updateUser";
+        RestTemplate restTemplate = new RestTemplate();
+
+        restTemplate.put(url, fetchedUser);
     }
 }
 

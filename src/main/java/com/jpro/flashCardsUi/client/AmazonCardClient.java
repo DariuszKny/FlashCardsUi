@@ -13,12 +13,12 @@ public class AmazonCardClient {
     private static final Logger LOGGER = LoggerFactory.getLogger(AmazonCardClient.class);
 
 
-    public byte[] getAudio(String text) {
+    public byte[] getAudio(String text, Language language) {
         RestTemplate restTemplate = new RestTemplate();
         byte[] bytes = null;
         URI url = UriComponentsBuilder.fromHttpUrl("http://localhost:8080/v1/amazonCard/getAudio")
                 .queryParam("text",text)
-                .queryParam("language",Language.ENGLISH)
+                .queryParam("language",language)
                 .build().encode().toUri();
         try{
              bytes = restTemplate.getForObject(url,byte[].class);

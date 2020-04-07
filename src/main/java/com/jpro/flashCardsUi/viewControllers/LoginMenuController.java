@@ -3,7 +3,7 @@ package com.jpro.flashCardsUi.viewControllers;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
-import com.jpro.flashCardsUi.HelloJProFXML;
+import com.jpro.flashCardsUi.FlashCardsUI;
 import com.jpro.flashCardsUi.domain.FetchedUser;
 import com.jpro.flashCardsUi.validator.LoginValidator;
 import javafx.fxml.FXML;
@@ -16,7 +16,7 @@ import java.util.ResourceBundle;
 
 public class LoginMenuController implements Initializable {
 
-    private HelloJProFXMLController helloJProFXMLController;
+    private MainViewController mainViewController;
 
     @FXML
     private AnchorPane root;
@@ -40,8 +40,8 @@ public class LoginMenuController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
     }
 
-    public void init(HelloJProFXMLController helloJProFXMLController) {
-        this.helloJProFXMLController = helloJProFXMLController;
+    public void init(MainViewController mainViewController) {
+        this.mainViewController = mainViewController;
     }
 
     @FXML
@@ -57,9 +57,10 @@ public class LoginMenuController implements Initializable {
             alert("Username Invalid", "Wrong username, or password");
         } else {
             alert("User Logged", "You may use FlashCards!");
-            HelloJProFXML.LOGGED_USER=fetchedUser;
-            helloJProFXMLController.setPermission();
-            helloJProFXMLController.handleButtonOne();
+            FlashCardsUI.LOGGED_USER=fetchedUser;
+            mainViewController.setAppColor(FlashCardsUI.LOGGED_USER.getUserAppColor());
+            mainViewController.setPermission();
+            mainViewController.handleButtonOne();
         }
     }
 

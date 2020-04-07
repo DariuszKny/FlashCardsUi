@@ -21,4 +21,5 @@ public class FlashCardMapper {
                 .map(flashCard -> new TableViewFlashCard(flashCard.getId(),flashCard.getName(),flashCard.getLanguage(),flashCard.getFlashCardProgress()))
                 .collect(Collectors.toList());
     }
+
 }

@@ -16,10 +16,41 @@ public class FlashCardClient {
     private static final Logger LOGGER = LoggerFactory.getLogger(FlashCardClient.class);
 
 
-    public List<FetchedFlashCard> getFlashCardsByUserID(Long id) {
+    public List<FetchedFlashCard> getFlashCardsByUserIdAndLanguage(Long id, Language language) {
         RestTemplate restTemplate = new RestTemplate();
         URI url = UriComponentsBuilder.fromHttpUrl("http://localhost:8080/v1/flashCard/getFlashCards")
                 .queryParam("userId",id)
+                .queryParam("language",language)
+                .build().encode().toUri();
+        try{
+            FetchedFlashCard[] boardResponse = restTemplate.getForObject(url, FetchedFlashCard[].class);
+            return Arrays.asList(Optional.ofNullable(boardResponse).orElse(new FetchedFlashCard[0]));
+        } catch (RestClientException e) {
+            LOGGER.error(e.getMessage(),e);
+            return new ArrayList<>();
+        }
+    }
+
+    public FetchedFlashCard getFlashCard(Long id) {
+        RestTemplate restTemplate = new RestTemplate();
+        URI url = UriComponentsBuilder.fromHttpUrl("http://localhost:8080/v1/flashCard/getFlashCard")
+                .queryParam("flashCardId",id)
+                .build().encode().toUri();
+        try{
+            FetchedFlashCard boardResponse = restTemplate.getForObject(url, FetchedFlashCard.class);
+            return boardResponse;
+        } catch (RestClientException e) {
+            LOGGER.error(e.getMessage(),e);
+        }
+       return null;
+    }
+
+    public List<FetchedFlashCard> getFlashCardsByUserIdAndLanguageAndProgress(Long id, Language language, FlashCardProgress flashCardProgress) {
+        RestTemplate restTemplate = new RestTemplate();
+        URI url = UriComponentsBuilder.fromHttpUrl("http://localhost:8080/v1/flashCard/getFlashCardsByProgress")
+                .queryParam("userId",id)
+                .queryParam("language",language)
+                .queryParam("flashCardProgress",flashCardProgress)
                 .build().encode().toUri();
         try{
             FetchedFlashCard[] boardResponse = restTemplate.getForObject(url, FetchedFlashCard[].class);
@@ -40,7 +71,7 @@ public class FlashCardClient {
 
         Map<String, Object> map = new HashMap<>();
         map.put("name", name);
-        map.put("language", Language.ENGLISH);
+        map.put("language", fetchedUser.getLanguage());
         map.put("flashCardProgress", FlashCardProgress.NEW);
         map.put("updated", LocalDateTime.now());
         map.put("userDto", fetchedUser);
@@ -66,5 +97,17 @@ public class FlashCardClient {
         fetchedFlashCard.setUpdated(LocalDateTime.now());
 
         restTemplate.put(url, fetchedFlashCard);
+    }
+
+    public void deleteFlashCard(Long flashCardId) {
+        RestTemplate restTemplate = new RestTemplate();
+        URI url = UriComponentsBuilder.fromHttpUrl("http://localhost:8080/v1/flashCard/deleteFlashCard")
+                .queryParam("flashCardId",flashCardId)
+                .build().encode().toUri();
+        try{
+            restTemplate.delete(url);
+        } catch (RestClientException e) {
+            LOGGER.error(e.getMessage(),e);
+        }
     }
 }

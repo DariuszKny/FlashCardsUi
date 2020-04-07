@@ -107,7 +107,7 @@ java.net.BindException: Address already in use: bind
 java.lang.IllegalStateException: Location is not set.
 	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2459)
 	at javafx.fxml.FXMLLoader.load(FXMLLoader.java:2435)
-	at com.jpro.flashCardsUi.HelloJProFXML.start(HelloJProFXML.java:26)
+	at com.jpro.flashCardsUi.FlashCardsUI.start(HelloJProFXML.java:26)
 	at com.jpro.internal.config.ApplicationStarter$.$anonfun$startJApplication$1(ApplicationStarter.scala:133)
 	at com.jpro.internal.config.ApplicationStarter$.$anonfun$startJApplication$1$adapted(ApplicationStarter.scala:131)
 	at com.jpro.internal.communicator.InstanceImpl.start(InstanceImpl.scala:31)
@@ -166,7 +166,7 @@ java.lang.IllegalStateException: Location is not set.
 java.lang.IllegalStateException: Location is not set.
 	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2459)
 	at javafx.fxml.FXMLLoader.load(FXMLLoader.java:2435)
-	at com.jpro.flashCardsUi.HelloJProFXML.start(HelloJProFXML.java:26)
+	at com.jpro.flashCardsUi.FlashCardsUI.start(HelloJProFXML.java:26)
 	at com.jpro.internal.config.ApplicationStarter$.$anonfun$startJApplication$1(ApplicationStarter.scala:133)
 	at com.jpro.internal.config.ApplicationStarter$.$anonfun$startJApplication$1$adapted(ApplicationStarter.scala:131)
 	at com.jpro.internal.communicator.InstanceImpl.start(InstanceImpl.scala:31)
@@ -223,7 +223,7 @@ java.lang.IllegalStateException: Location is not set.
 	at java.base/java.lang.Thread.run(Thread.java:834)
 2020-02-28 21:14:10,868 [ERROR] from com.jpro.internal.communicator.InstanceImpl in JavaFX Application Thread - Error while starting application: 
 java.lang.NullPointerException: null
-	at com.jpro.flashCardsUi.HelloJProFXML.start(HelloJProFXML.java:28)
+	at com.jpro.flashCardsUi.FlashCardsUI.start(HelloJProFXML.java:28)
 	at com.jpro.internal.config.ApplicationStarter$.$anonfun$startJApplication$1(ApplicationStarter.scala:133)
 	at com.jpro.internal.config.ApplicationStarter$.$anonfun$startJApplication$1$adapted(ApplicationStarter.scala:131)
 	at com.jpro.internal.communicator.InstanceImpl.start(InstanceImpl.scala:31)
@@ -380,7 +380,7 @@ Caused by: javazoom.jl.decoder.JavaLayerException: cannot obtain source audio li
 	at javazoom.jl.player.advanced.AdvancedPlayer.decodeFrame(AdvancedPlayer.java:163)
 	at javazoom.jl.player.advanced.AdvancedPlayer.play(AdvancedPlayer.java:91)
 	at javazoom.jl.player.advanced.AdvancedPlayer.play(AdvancedPlayer.java:72)
-	at com.jpro.flashCardsUi.viewControllers.HelloJProFXMLController.playSound(HelloJProFXMLController.java:73)
+	at com.jpro.flashCardsUi.viewControllers.MainViewController.playSound(HelloJProFXMLController.java:73)
 	... 86 common frames omitted
 2020-03-11 18:08:42,410 [ERROR] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Error while processing the input: MouseEventToken(MouseReleased,613.0,309.0,MouseButtonToken(3),false,false,false,false,false,false,false,false) app: stage title: Hello jpro!
 java.lang.reflect.InvocationTargetException: null
@@ -479,7 +479,7 @@ Caused by: java.lang.reflect.InvocationTargetException: null
 	... 74 common frames omitted
 Caused by: javazoom.jl.decoder.JavaLayerException: Cannot create AudioDevice
 	at javazoom.jl.player.FactoryRegistry.createAudioDevice(FactoryRegistry.java:97)
-	at com.jpro.flashCardsUi.viewControllers.HelloJProFXMLController.playSound(HelloJProFXMLController.java:57)
+	at com.jpro.flashCardsUi.viewControllers.MainViewController.playSound(HelloJProFXMLController.java:57)
 	... 86 common frames omitted
 2020-03-11 18:09:26,093 [ERROR] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Error while processing the input: MouseEventToken(MouseReleased,645.0,347.0,MouseButtonToken(3),false,false,false,false,false,false,false,false) app: stage title: Hello jpro!
 java.lang.reflect.InvocationTargetException: null
@@ -578,7 +578,7 @@ Caused by: java.lang.reflect.InvocationTargetException: null
 	... 74 common frames omitted
 Caused by: javazoom.jl.decoder.JavaLayerException: Cannot create AudioDevice
 	at javazoom.jl.player.FactoryRegistry.createAudioDevice(FactoryRegistry.java:97)
-	at com.jpro.flashCardsUi.viewControllers.HelloJProFXMLController.playSound(HelloJProFXMLController.java:57)
+	at com.jpro.flashCardsUi.viewControllers.MainViewController.playSound(HelloJProFXMLController.java:57)
 	... 86 common frames omitted
 2020-03-11 18:09:30,764 [ERROR] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Error while processing the input: MouseEventToken(MouseReleased,661.0,344.0,MouseButtonToken(3),false,false,false,false,false,false,false,false) app: stage title: Hello jpro!
 java.lang.reflect.InvocationTargetException: null
@@ -677,7 +677,7 @@ Caused by: java.lang.reflect.InvocationTargetException: null
 	... 74 common frames omitted
 Caused by: javazoom.jl.decoder.JavaLayerException: Cannot create AudioDevice
 	at javazoom.jl.player.FactoryRegistry.createAudioDevice(FactoryRegistry.java:97)
-	at com.jpro.flashCardsUi.viewControllers.HelloJProFXMLController.playSound(HelloJProFXMLController.java:57)
+	at com.jpro.flashCardsUi.viewControllers.MainViewController.playSound(HelloJProFXMLController.java:57)
 	... 86 common frames omitted
 2020-03-11 18:09:32,569 [ERROR] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Error while processing the input: MouseEventToken(MouseReleased,641.0,331.0,MouseButtonToken(3),false,false,false,false,false,false,false,false) app: stage title: Hello jpro!
 java.lang.reflect.InvocationTargetException: null
@@ -776,7 +776,7 @@ Caused by: java.lang.reflect.InvocationTargetException: null
 	... 74 common frames omitted
 Caused by: javazoom.jl.decoder.JavaLayerException: Cannot create AudioDevice
 	at javazoom.jl.player.FactoryRegistry.createAudioDevice(FactoryRegistry.java:97)
-	at com.jpro.flashCardsUi.viewControllers.HelloJProFXMLController.playSound(HelloJProFXMLController.java:57)
+	at com.jpro.flashCardsUi.viewControllers.MainViewController.playSound(HelloJProFXMLController.java:57)
 	... 86 common frames omitted
 2020-03-11 18:10:07,328 [ERROR] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Error while processing the input: MouseEventToken(MouseReleased,639.0,324.0,MouseButtonToken(3),false,false,false,false,false,false,false,false) app: stage title: Hello jpro!
 java.lang.reflect.InvocationTargetException: null
@@ -875,14 +875,14 @@ Caused by: java.lang.reflect.InvocationTargetException: null
 	... 74 common frames omitted
 Caused by: javazoom.jl.decoder.JavaLayerException: Cannot create AudioDevice
 	at javazoom.jl.player.FactoryRegistry.createAudioDevice(FactoryRegistry.java:97)
-	at com.jpro.flashCardsUi.viewControllers.HelloJProFXMLController.playSound(HelloJProFXMLController.java:57)
+	at com.jpro.flashCardsUi.viewControllers.MainViewController.playSound(HelloJProFXMLController.java:57)
 	... 86 common frames omitted
 2020-03-17 17:04:47,303 [ERROR] from com.jpro.internal.communicator.InstanceImpl in JavaFX Application Thread - Error while starting application: 
 java.lang.NoClassDefFoundError: com/fasterxml/jackson/databind/exc/MismatchedInputException
 	at org.springframework.http.converter.support.AllEncompassingFormHttpMessageConverter.<init>(AllEncompassingFormHttpMessageConverter.java:76)
 	at org.springframework.web.client.RestTemplate.<init>(RestTemplate.java:147)
 	at com.jpro.flashCardsUi.client.UserClient.<init>(UserClient.java:19)
-	at com.jpro.flashCardsUi.viewControllers.HelloJProFXMLController.<init>(HelloJProFXMLController.java:26)
+	at com.jpro.flashCardsUi.viewControllers.MainViewController.<init>(HelloJProFXMLController.java:26)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -896,7 +896,7 @@ java.lang.NoClassDefFoundError: com/fasterxml/jackson/databind/exc/MismatchedInp
 	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2552)
 	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2466)
 	at javafx.fxml.FXMLLoader.load(FXMLLoader.java:2435)
-	at com.jpro.flashCardsUi.HelloJProFXML.start(HelloJProFXML.java:28)
+	at com.jpro.flashCardsUi.FlashCardsUI.start(HelloJProFXML.java:28)
 	at com.jpro.internal.config.ApplicationStarter$.$anonfun$startJApplication$1(ApplicationStarter.scala:133)
 	at com.jpro.internal.config.ApplicationStarter$.$anonfun$startJApplication$1$adapted(ApplicationStarter.scala:131)
 	at com.jpro.internal.communicator.InstanceImpl.start(InstanceImpl.scala:31)
@@ -961,7 +961,7 @@ java.lang.NoClassDefFoundError: com/fasterxml/jackson/databind/exc/MismatchedInp
 	at org.springframework.http.converter.support.AllEncompassingFormHttpMessageConverter.<init>(AllEncompassingFormHttpMessageConverter.java:76)
 	at org.springframework.web.client.RestTemplate.<init>(RestTemplate.java:147)
 	at com.jpro.flashCardsUi.client.UserClient.<init>(UserClient.java:20)
-	at com.jpro.flashCardsUi.viewControllers.HelloJProFXMLController.<init>(HelloJProFXMLController.java:27)
+	at com.jpro.flashCardsUi.viewControllers.MainViewController.<init>(HelloJProFXMLController.java:27)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -975,7 +975,7 @@ java.lang.NoClassDefFoundError: com/fasterxml/jackson/databind/exc/MismatchedInp
 	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2552)
 	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2466)
 	at javafx.fxml.FXMLLoader.load(FXMLLoader.java:2435)
-	at com.jpro.flashCardsUi.HelloJProFXML.start(HelloJProFXML.java:28)
+	at com.jpro.flashCardsUi.FlashCardsUI.start(HelloJProFXML.java:28)
 	at com.jpro.internal.config.ApplicationStarter$.$anonfun$startJApplication$1(ApplicationStarter.scala:133)
 	at com.jpro.internal.config.ApplicationStarter$.$anonfun$startJApplication$1$adapted(ApplicationStarter.scala:131)
 	at com.jpro.internal.communicator.InstanceImpl.start(InstanceImpl.scala:31)
@@ -1131,8 +1131,8 @@ Caused by: java.lang.reflect.InvocationTargetException: null
 	at javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1784)
 	... 74 common frames omitted
 Caused by: java.lang.NullPointerException: null
-	at com.jpro.flashCardsUi.viewControllers.HelloJProFXMLController.getCustomers(HelloJProFXMLController.java:48)
-	at com.jpro.flashCardsUi.viewControllers.HelloJProFXMLController.showlistView(HelloJProFXMLController.java:52)
+	at com.jpro.flashCardsUi.viewControllers.MainViewController.getCustomers(HelloJProFXMLController.java:48)
+	at com.jpro.flashCardsUi.viewControllers.MainViewController.showlistView(HelloJProFXMLController.java:52)
 	... 86 common frames omitted
 2020-03-17 18:15:31,414 [ERROR] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Error while processing the input: MouseEventToken(MouseReleased,334.0,348.0,MouseButtonToken(3),false,false,false,false,false,false,false,false) app: stage title: Hello jpro!
 java.lang.reflect.InvocationTargetException: null
@@ -1230,8 +1230,8 @@ Caused by: java.lang.reflect.InvocationTargetException: null
 	at javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1784)
 	... 74 common frames omitted
 Caused by: java.lang.NullPointerException: null
-	at com.jpro.flashCardsUi.viewControllers.HelloJProFXMLController.getCustomers(HelloJProFXMLController.java:48)
-	at com.jpro.flashCardsUi.viewControllers.HelloJProFXMLController.showlistView(HelloJProFXMLController.java:52)
+	at com.jpro.flashCardsUi.viewControllers.MainViewController.getCustomers(HelloJProFXMLController.java:48)
+	at com.jpro.flashCardsUi.viewControllers.MainViewController.showlistView(HelloJProFXMLController.java:52)
 	... 86 common frames omitted
 2020-03-17 18:15:36,076 [ERROR] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Error while processing the input: MouseEventToken(MouseReleased,365.0,340.0,MouseButtonToken(3),false,false,false,false,false,false,false,false) app: stage title: Hello jpro!
 java.lang.reflect.InvocationTargetException: null
@@ -1329,8 +1329,8 @@ Caused by: java.lang.reflect.InvocationTargetException: null
 	at javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1784)
 	... 74 common frames omitted
 Caused by: java.lang.NullPointerException: null
-	at com.jpro.flashCardsUi.viewControllers.HelloJProFXMLController.getCustomers(HelloJProFXMLController.java:48)
-	at com.jpro.flashCardsUi.viewControllers.HelloJProFXMLController.showlistView(HelloJProFXMLController.java:52)
+	at com.jpro.flashCardsUi.viewControllers.MainViewController.getCustomers(HelloJProFXMLController.java:48)
+	at com.jpro.flashCardsUi.viewControllers.MainViewController.showlistView(HelloJProFXMLController.java:52)
 	... 86 common frames omitted
 2020-03-17 18:15:37,063 [ERROR] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Error while processing the input: MouseEventToken(MouseReleased,365.0,340.0,MouseButtonToken(3),false,false,false,false,false,false,false,false) app: stage title: Hello jpro!
 java.lang.reflect.InvocationTargetException: null
@@ -1428,8 +1428,8 @@ Caused by: java.lang.reflect.InvocationTargetException: null
 	at javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1784)
 	... 74 common frames omitted
 Caused by: java.lang.NullPointerException: null
-	at com.jpro.flashCardsUi.viewControllers.HelloJProFXMLController.getCustomers(HelloJProFXMLController.java:48)
-	at com.jpro.flashCardsUi.viewControllers.HelloJProFXMLController.showlistView(HelloJProFXMLController.java:52)
+	at com.jpro.flashCardsUi.viewControllers.MainViewController.getCustomers(HelloJProFXMLController.java:48)
+	at com.jpro.flashCardsUi.viewControllers.MainViewController.showlistView(HelloJProFXMLController.java:52)
 	... 86 common frames omitted
 2020-03-17 18:16:22,818 [ERROR] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Error while processing the input: MouseEventToken(MouseReleased,348.0,349.0,MouseButtonToken(3),false,false,false,false,false,false,false,false) app: stage title: Hello jpro!
 java.lang.reflect.InvocationTargetException: null
@@ -1527,8 +1527,8 @@ Caused by: java.lang.reflect.InvocationTargetException: null
 	at javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1784)
 	... 74 common frames omitted
 Caused by: java.lang.NullPointerException: null
-	at com.jpro.flashCardsUi.viewControllers.HelloJProFXMLController.getCustomers(HelloJProFXMLController.java:48)
-	at com.jpro.flashCardsUi.viewControllers.HelloJProFXMLController.showlistView(HelloJProFXMLController.java:52)
+	at com.jpro.flashCardsUi.viewControllers.MainViewController.getCustomers(HelloJProFXMLController.java:48)
+	at com.jpro.flashCardsUi.viewControllers.MainViewController.showlistView(HelloJProFXMLController.java:52)
 	... 86 common frames omitted
 2020-03-17 18:16:23,455 [ERROR] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Error while processing the input: MouseEventToken(MouseReleased,348.0,349.0,MouseButtonToken(3),false,false,false,false,false,false,false,false) app: stage title: Hello jpro!
 java.lang.reflect.InvocationTargetException: null
@@ -1626,8 +1626,8 @@ Caused by: java.lang.reflect.InvocationTargetException: null
 	at javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1784)
 	... 74 common frames omitted
 Caused by: java.lang.NullPointerException: null
-	at com.jpro.flashCardsUi.viewControllers.HelloJProFXMLController.getCustomers(HelloJProFXMLController.java:48)
-	at com.jpro.flashCardsUi.viewControllers.HelloJProFXMLController.showlistView(HelloJProFXMLController.java:52)
+	at com.jpro.flashCardsUi.viewControllers.MainViewController.getCustomers(HelloJProFXMLController.java:48)
+	at com.jpro.flashCardsUi.viewControllers.MainViewController.showlistView(HelloJProFXMLController.java:52)
 	... 86 common frames omitted
 2020-03-17 18:16:28,981 [ERROR] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Error while processing the input: MouseEventToken(MouseReleased,377.0,349.0,MouseButtonToken(3),false,false,false,false,false,false,false,false) app: stage title: Hello jpro!
 java.lang.reflect.InvocationTargetException: null
@@ -1725,8 +1725,8 @@ Caused by: java.lang.reflect.InvocationTargetException: null
 	at javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1784)
 	... 74 common frames omitted
 Caused by: java.lang.NullPointerException: null
-	at com.jpro.flashCardsUi.viewControllers.HelloJProFXMLController.getCustomers(HelloJProFXMLController.java:48)
-	at com.jpro.flashCardsUi.viewControllers.HelloJProFXMLController.showlistView(HelloJProFXMLController.java:52)
+	at com.jpro.flashCardsUi.viewControllers.MainViewController.getCustomers(HelloJProFXMLController.java:48)
+	at com.jpro.flashCardsUi.viewControllers.MainViewController.showlistView(HelloJProFXMLController.java:52)
 	... 86 common frames omitted
 2020-03-17 18:20:13,968 [ERROR] from com.jpro.meta.tk.SceneInputListener in JavaFX Application Thread - Error while processing the input: MouseEventToken(MouseReleased,339.0,350.0,MouseButtonToken(3),false,false,false,false,false,false,false,false) app: stage title: Hello jpro!
 java.lang.reflect.InvocationTargetException: null
@@ -1824,8 +1824,8 @@ Caused by: java.lang.reflect.InvocationTargetException: null
 	at javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1784)
 	... 74 common frames omitted
 Caused by: java.lang.NullPointerException: null
-	at com.jpro.flashCardsUi.viewControllers.HelloJProFXMLController.getCustomers(HelloJProFXMLController.java:48)
-	at com.jpro.flashCardsUi.viewControllers.HelloJProFXMLController.showlistView(HelloJProFXMLController.java:52)
+	at com.jpro.flashCardsUi.viewControllers.MainViewController.getCustomers(HelloJProFXMLController.java:48)
+	at com.jpro.flashCardsUi.viewControllers.MainViewController.showlistView(HelloJProFXMLController.java:52)
 	... 86 common frames omitted
 2020-03-19 23:05:47,863 [ERROR] from akka.io.TcpListener in application-akka.actor.default-dispatcher-3 - Bind failed for TCP channel on endpoint [/0.0.0.0:8080]
 java.net.BindException: Address already in use: bind
