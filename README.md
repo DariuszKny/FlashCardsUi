@@ -1,7 +1,7 @@
 # FLashCardsUi
 
 
-This is frontend Application off FleshCard Project. The backend repository is https://github.com/DariuszKny/FlashCards
+This is frontend Application of FleshCard Project. The backend repository is https://github.com/DariuszKny/FlashCards
 
 
 
@@ -13,7 +13,8 @@ This is frontend Application off FleshCard Project. The backend repository is ht
 
 ```
 After building Your gradle project, just type this command to start Application in a web browser 
-./gradlew jproRun
+
+'gradlew jproRun'
 ```
 
 ### Open jpro app in Web Browser ###
