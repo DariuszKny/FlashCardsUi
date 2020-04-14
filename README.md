@@ -28,6 +28,8 @@ http://localhost:8181/index.html
 3. In Option menu set curent language, that You want to learn
 4. In Manage menu create new FleshCards
 5. Learn 
+
+6. There is admin console added - to open You have to register account with name "admin"
 ```
 
 
