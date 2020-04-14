@@ -2,6 +2,7 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextArea?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
@@ -82,6 +83,22 @@
                </padding>
             </JFXButton>
          </children></VBox>
+      <VBox fx:id="errorBox" layoutX="207.0" layoutY="528.0" prefHeight="133.0" prefWidth="365.0" style="-fx-border-color: #dcd8d3; -fx-border-width: 3px; -fx-background-radius: 2px; -fx-border-radius: 6px; -fx-background-color: #dcd8d3;">
+         <children>
+            <JFXTextArea fx:id="errorArea" />
+            <JFXButton fx:id="okButton" onAction="#enableConsole" prefHeight="28.0" prefWidth="141.0" style="-fx-background-color: #dbac98; -fx-background-radius: 20px;" text="OK" textFill="#e35d6a">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="100.0" right="15.0" top="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Verdana Bold" size="22.0" />
+               </font>
+               <padding>
+                  <Insets right="5.0" />
+               </padding>
+            </JFXButton>
+         </children>
+      </VBox>
 
 
 

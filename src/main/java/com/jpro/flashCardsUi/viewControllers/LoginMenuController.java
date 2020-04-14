@@ -2,14 +2,15 @@ package com.jpro.flashCardsUi.viewControllers;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
+import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
 import com.jpro.flashCardsUi.FlashCardsUI;
 import com.jpro.flashCardsUi.domain.FetchedUser;
 import com.jpro.flashCardsUi.validator.LoginValidator;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -36,8 +37,18 @@ public class LoginMenuController implements Initializable {
     @FXML
     private JFXButton adminButton;
 
+    @FXML
+    private VBox errorBox;
+
+    @FXML
+    private JFXButton okButton;
+
+    @FXML
+    private JFXTextArea errorArea;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        errorBox.setVisible(false);
     }
 
     public void init(MainViewController mainViewController) {
@@ -54,9 +65,9 @@ public class LoginMenuController implements Initializable {
         FetchedUser fetchedUser = userValidator.validatedUser();
 
         if (fetchedUser == null) {
-            //alert("Username Invalid", "Wrong username, or password");
+            alert("Username Invalid", "Wrong username, or password");
         } else {
-            //alert("User Logged", "You may use FlashCards!");
+            alert("User Logged", "You may use FlashCards!");
             FlashCardsUI.LOGGED_USER = fetchedUser;
             mainViewController.setAppColor(FlashCardsUI.LOGGED_USER.getUserAppColor());
             mainViewController.setPermission();
@@ -65,12 +76,16 @@ public class LoginMenuController implements Initializable {
     }
 
     @FXML
-    public void alert(String title, String content) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle(title);
-        alert.setContentText(content);
-        alert.setHeaderText(null);
-        alert.showAndWait();
+    private void alert(String title, String content) {
+        errorArea.setText(content);
+        errorBox.setVisible(true);
+        logButton.setDisable(true);
+    }
+
+    @FXML
+    private void enableConsole() {
+        errorBox.setVisible(false);
+        logButton.setDisable(false);
     }
 
 

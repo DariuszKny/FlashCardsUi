@@ -58,7 +58,7 @@ public class UserClient {
         map.put("password", password);
         map.put("email", mail);
         map.put("language", Language.ENGLISH);
-        map.put("userAppColor", UserAppColor.DARK);
+        map.put("userAppColor", UserAppColor.LIGHT);
 
         HttpEntity<Map<String, Object>> entity = new HttpEntity<>(map, headers);
         ResponseEntity<String> response = restTemplate.postForEntity(url, entity, String.class);

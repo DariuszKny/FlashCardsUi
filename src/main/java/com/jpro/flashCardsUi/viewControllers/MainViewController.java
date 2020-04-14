@@ -95,7 +95,6 @@ public class MainViewController implements Initializable {
     @FXML
     public void handleButtonSix() {
         FlashCardsUI.LOGGED_USER = null;
-        alert("Logged Out", "You successfully logged");
         setPermission();
         handleButtonFour();
     }
